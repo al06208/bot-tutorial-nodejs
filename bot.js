@@ -23,9 +23,9 @@ function respond() {
     var reg6 = botRegex6.test(request.text);
     var reg7 = botRegex7.test(request.text);
     var reg8 = botRegex8.test(request.text);
-    console.log(this.req.chunks[1]);
-    console.log(this.req.chunks[2]);
-    console.log(this.req.chunks[3]);
+    console.log(JSON.parse(this.req.chunks[1]));
+    console.log(JSON.parse(this.req.chunks[2]));
+    console.log(JSON.parse(this.req.chunks[3]));
 
 
     if (request.text && reg1) {
