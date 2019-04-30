@@ -26,128 +26,129 @@ function respond() {
     //console.log(JSON.parse(this.req.chunks[1]));
     //console.log(JSON.parse(this.req.chunks[2]));
 
+    if (request.sender_type === 'user') {
+        if (request.text && reg1) {
+            this.res.writeHead(200);
+            postMessage(cool());
+            this.res.end();
+        }
+        else if (request.text && reg2) {
+            this.res.writeHead(200);
+            switch (Math.floor(Math.random() * 4)) {
+                case 0:
+                    postImage(img0);
+                    break;
+                case 1:
+                    postImage(img1);
+                    break;
+                case 2:
+                    postImage(img2);
+                    break;
+                case 3:
+                    postImage(img3);
+                    break;
+                default:
+                    postMessage('oh god oh fuck');
+                    break;
+            }
+            postMessage('YOU CAN\'T SAY THAT THAT\'S RACIST');
+            this.res.end();
+        }
+        else if (request.text && reg3) {
+            this.res.writeHead(200);
+            switch (Math.floor(Math.random() * 3)) {
+                case 0:
+                    postMessage('Yes, friend');
+                    break;
+                case 1:
+                    postMessage('I\'m sorry, no');
+                    break;
+                case 2:
+                    postMessage('Ask again later');
+                    break;
+                default:
+                    postMessage('oh god oh fuck');
+                    break;
+            }
+            this.res.end();
+        }
+        else if (request.text && reg4) {
+            this.res.writeHead(200);
+            postMessage('Beemisbot v1.5 Patch Notes: Beemisjam 2k19 update\n-Added Avengers anti-spoiler countermeasures\n-Added pleasant greetings\n-Improved Beemis\'s ability to respond to attacks against his kin\n-Added a secret command ;)');
+            this.res.end();
+        }
+        else if (request.text && reg5) {
+            this.res.writeHead(200);
+            console.log("gay mom detected");
+            switch (Math.floor(Math.random() * 3)) {
+                case 0:
+                    postMessage('no u');
+                    break;
+                case 1:
+                    postMessage('ur dad lesbian');
+                    break;
+                case 2:
+                    postMessage('no u infinity');
+                    break;
+                default:
+                    postMessage('oh god oh fuck');
+                    break;
+            }
+            this.res.end();
+        }
+        else if (request.text && reg6) {
+            this.res.writeHead(200);
+            postImage(imgThanos);
+            this.res.end();
+        }
+        else if (request.text && reg7) {
+            this.res.writeHead(200);
+            switch (Math.floor(Math.random() * 4)) {
+                case 0:
+                    postMessage('Hello, friends');
+                    break;
+                case 1:
+                    postMessage('G\'day brethen, let\'s get this bread');
+                    break;
+                case 2:
+                    postMessage('Hi guys');
+                    break;
+                case 3:
+                    postMessage('Death calls us all,  and we continuue to ignore its sweet beckon');
+                    break;
+                default:
+                    postMessage('Fetus deletus');
+                    break;
+            }
+            this.res.end();
+        }
+        else if (request.text && reg8) {
+            this.res.writeHead(200);
+            switch (Math.floor(Math.random() * 4)) {
+                case 0:
+                    postMessage('I like to finish off my BLT with a delicious medium strawberry shake!');
+                    break;
+                case 1:
+                    postMessage('While you\'re here, grab a large cherry limeaid. We\'ll see you here!');
+                    break;
+                case 2:
+                    postMessage('My name is Jacob and I\'m here to tell you about our sweet treats with an even sweeter price!');
+                    break;
+                case 3:
+                    postMessage('Every night after 8pm, Sanic in Augusta on Wheeler Road has half-priced Shakes, Floats, and Ice Cream Slushies. Make your night a Sanic Night!');
+                    break;
+                default:
+                    postMessage('Hi, I\'m Jacob!');
+                    break;
 
-    if (request.text && reg1) {
-        this.res.writeHead(200);
-        postMessage(cool());
-        this.res.end();
-    }
-    else if (request.text && reg2) {
-        this.res.writeHead(200);
-        switch (Math.floor(Math.random() * 4)) {
-            case 0:
-                postImage(img0);
-                break;
-            case 1:
-                postImage(img1);
-                break;
-            case 2:
-                postImage(img2);
-                break;
-            case 3:
-                postImage(img3);
-                break;
-            default:
-                postMessage('oh god oh fuck');
-                break;
+            }
+            this.res.end();
         }
-        postMessage('YOU CAN\'T SAY THAT THAT\'S RACIST');
-        this.res.end();
-    }
-    else if (request.text && reg3) {
-        this.res.writeHead(200);
-        switch (Math.floor(Math.random() * 3)) {
-            case 0:
-                postMessage('Yes, friend');
-                break;
-            case 1:
-                postMessage('I\'m sorry, no');
-                break;
-            case 2:
-                postMessage('Ask again later');
-                break;
-            default:
-                postMessage('oh god oh fuck');
-                break;
+        else {
+            console.log("don't care");
+            this.res.writeHead(200);
+            this.res.end();
         }
-        this.res.end();
-    }
-    else if (request.text && reg4) {
-        this.res.writeHead(200);
-        postMessage('Beemisbot v1.5 Patch Notes: Beemisjam 2k19 update\n-Added Avengers anti-spoiler countermeasures\n-Added pleasant greetings\n-Improved Beemis\'s ability to respond to attacks against his kin\n-Added a secret command ;)');
-        this.res.end();
-    }
-    else if (request.text && reg5) {
-        this.res.writeHead(200);
-        console.log("gay mom detected");
-        switch (Math.floor(Math.random() * 3)) {
-            case 0:
-                postMessage('no u');
-                break;
-            case 1:
-                postMessage('ur dad lesbian');
-                break;
-            case 2:
-                postMessage('no u infinity');
-                break;
-            default:
-                postMessage('oh god oh fuck');
-                break;
-        }
-        this.res.end();
-    }
-    else if (request.text && reg6) {
-        this.res.writeHead(200);
-        postImage(imgThanos);
-        this.res.end();
-    }
-    else if (request.text && reg7) {
-        this.res.writeHead(200);
-        switch (Math.floor(Math.random() * 4)) {
-            case 0:
-                postMessage('Hello, friends');
-                break;
-            case 1:
-                postMessage('G\'day brethen, let\'s get this bread');
-                break;
-            case 2:
-                postMessage('Hi guys');
-                break;
-            case 3:
-                postMessage('Death calls us all,  and we continuue to ignore its sweet beckon');
-                break;
-            default:
-                postMessage('Fetus deletus');
-                break;
-        }
-        this.res.end();
-    }
-    else if (request.text && reg8) {
-        this.res.writeHead(200);
-        switch (Math.floor(Math.random() * 4)) {
-            case 0:
-                postMessage('I like to finish off my BLT with a delicious medium strawberry shake!');
-                break;
-            case 1:
-                postMessage('While you\'re here, grab a large cherry limeaid. We\'ll see you here!');
-                break;
-            case 2:
-                postMessage('My name is Jacob and I\'m here to tell you about our sweet treats with an even sweeter price!');
-                break;
-            case 3:
-                postMessage('Every night after 8pm, Sanic in Augusta on Wheeler Road has half-priced Shakes, Floats, and Ice Cream Slushies. Make your night a Sanic Night!');
-                break;
-            default:
-                postMessage('Hi, I\'m Jacob!');
-                break;
-                
-        }
-        this.res.end();
-    }
-    else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
     }
 }
 
