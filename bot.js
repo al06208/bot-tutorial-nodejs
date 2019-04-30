@@ -12,6 +12,7 @@ function respond() {
 
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /.*[Ee]nd[Gg]ame.*$/, botRegex7=/.*[Gg][Rr][Ee][Ee][Tt][Ii][Nn][Gg].*$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
+    var botRegex8 = /.*[Ss]onic.*/;
 
 
     var reg1 = botRegex1.test(request.text);
@@ -21,6 +22,7 @@ function respond() {
     var reg5 = botRegex5.test(request.text);
     var reg6 = botRegex6.test(request.text);
     var reg7 = botRegex7.test(request.text);
+    var reg8 = botRegex8.test(request.text);
     console.log(reg7);
 
 
@@ -117,6 +119,29 @@ function respond() {
                 postMessage('Fetus deletus');
                 break;
         }
+        this.res.end();
+    }
+    else if (request.text && reg8) {
+        this.res.writeHead(200);
+        switch (Math.floor(Math.random() * 4)) {
+            case 0:
+                postMessage('I like to finish off my BLT with a delicious medium strawberry shake!');
+                break;
+            case 1:
+                postMessage('While you\'re here grab a large cherry limeaid, we\'ll see you here!');
+                break;
+            case 2:
+                postMessage('My name is Jacob and I\'m here to tell you about our sweet treats with an even sweeter price!');
+                break;
+            case 3:
+                postMessage('Every night after 8pm, Sonic in Augusta on Wheeler Road has half priced Shakes, Floats, and Ice Cream Slushies. Make your night a Sonic Night!');
+                break;
+            default:
+                postMessage('Hi, I\'m Jacob!');
+                break;
+                
+        }
+        this.res.end();
     }
     else {
     console.log("don't care");
