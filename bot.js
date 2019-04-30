@@ -134,7 +134,7 @@ function respond() {
                 postMessage('My name is Jacob and I\'m here to tell you about our sweet treats with an even sweeter price!');
                 break;
             case 3:
-                postMessage('Every night after 8pm, Sanic in Augusta on Wheeler Road has half priced Shakes, Floats, and Ice Cream Slushies. Make your night a Sonic Night!');
+                postMessage('Every night after 8pm, Sanic in Augusta on Wheeler Road has half priced Shakes, Floats, and Ice Cream Slushies. Make your night a Sanic Night!');
                 break;
             default:
                 postMessage('Hi, I\'m Jacob!');
