@@ -23,7 +23,9 @@ function respond() {
     var reg6 = botRegex6.test(request.text);
     var reg7 = botRegex7.test(request.text);
     var reg8 = botRegex8.test(request.text);
-    console.log(reg7);
+    console.log(this.req.chunks[1]);
+    console.log(this.req.chunks[2]);
+    console.log(this.req.chunks[3]);
 
 
     if (request.text && reg1) {
