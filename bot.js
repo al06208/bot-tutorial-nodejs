@@ -71,7 +71,7 @@ function respond() {
     }
     else if (request.text && reg4) {
         this.res.writeHead(200);
-        postMessage('Beemisbot v1.4 Patch Notes: The Penguin Patch 2.0\n-Penguin Image Processing is improved, extra penguins added, many bugs fixed, all is good');
+        postMessage('Beemisbot v1.5 Patch Notes: Beemisjam 2k19 update\n-Added Avengers anti-spoiler countermeasures\n-Added pleasant greetings\n-Improved Beemis\'s ability to respond to attacks against his kin\n-Added a secret command ;)');
         this.res.end();
     }
     else if (request.text && reg5) {
