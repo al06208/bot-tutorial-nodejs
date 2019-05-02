@@ -1,7 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-const Booru = require('booru')
-const { BooruError, sites } = require('booru')
 
 var botID = process.env.BOT_ID;
 var img1 = "https://i.groupme.com/750x750.jpeg.fccb596a974447afa82be1da05ed4d88";
