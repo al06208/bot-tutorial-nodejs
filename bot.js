@@ -1,5 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var booru = require('booru');
 
 var botID = process.env.BOT_ID;
 var img1 = "https://i.groupme.com/750x750.jpeg.fccb596a974447afa82be1da05ed4d88";
@@ -10,7 +11,7 @@ var imgThanos = "https://i.groupme.com/1399x1407.jpeg.da79f18b4ae8401da9465f0a89
 
 function respond() {
 
-    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /.*[Ee]nd[Gg]ame.*$/, botRegex7=/.*[Gg][Rr][Ee][Ee][Tt][Ii][Nn][Gg].*$/;
+    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/coolguy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /.*[Ee]nd[Gg]ame.*$/, botRegex7=/.*[Gg][Rr][Ee][Ee][Tt][Ii][Nn][Gg].*$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
     var botRegex8 = /.*[Ss]onic.*/;
 
@@ -74,7 +75,7 @@ function respond() {
         }
         else if (request.text && reg4) {
             this.res.writeHead(200);
-            postMessage('Beemisbot v1.5 Patch Notes: Beemisjam 2k19 update\n-Added Avengers anti-spoiler countermeasures\n-Added pleasant greetings\n-Improved Beemis\'s ability to respond to attacks against his kin\n-Added a secret command ;)');
+            postMessage('Beemisbot v1.5.1 Patch Notes: Beemisjam 2k19 update\n-Added Avengers anti-spoiler countermeasures\n-Added pleasant greetings\n-Improved Beemis\'s ability to respond to attacks against his kin\n-Added a secret command ;)\n- /coolguy is now one word');
             this.res.end();
         }
         else if (request.text && reg5) {
