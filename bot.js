@@ -14,6 +14,7 @@ function respond() {
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/coolguy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /.*[Ee]nd[Gg]ame.*$/, botRegex7=/.*[Gg][Rr][Ee][Ee][Tt][Ii][Nn][Gg].*$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
     var botRegex8 = /.*[Ss]onic.*/;
+    var botRegex10 =/.*[Jj]anken.*/;
 
 
     var reg1 = botRegex1.test(request.text);
@@ -24,6 +25,7 @@ function respond() {
     var reg6 = botRegex6.test(request.text);
     var reg7 = botRegex7.test(request.text);
     var reg8 = botRegex8.test(request.text);
+    var reg10 =botRegex10.test(request.text);
     //console.log(JSON.parse(this.req.chunks[1]));
     //console.log(JSON.parse(this.req.chunks[2]));
 
@@ -143,6 +145,30 @@ function respond() {
                     break;
 
             }
+            this.res.end();
+        }   
+        else if(request.text && reg10){
+            this.res.writeHead(200);
+            switch (Math.floor(Math.random() *4)) {
+                case 0:
+                    postMessage('Paper');
+                    break;
+                case 1:
+                    postMessage('Rock');
+                    break;
+                case 2:
+                    postMessage('Scissors');
+                    break;
+                case 3:
+                    postMessage('Counter spell!\nDM: Your hands fall off.')    
+                    break;
+                default:
+                    postMessage('It is time...\nSEPPUKU!')
+                    break;
+
+            }
+            }
+
             this.res.end();
         }
         else {
