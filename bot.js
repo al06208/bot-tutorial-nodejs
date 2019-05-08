@@ -157,7 +157,7 @@ function respond() {
             Booru.search('safebooru', [search], { limit: 1, random: true })
                 .then(posts => {
                     for (let post of posts)
-                        console.log(post.fileUrl, post.postView)
+                        postImage(post.fileUrl);
                 })
             this.res.end;
         }
