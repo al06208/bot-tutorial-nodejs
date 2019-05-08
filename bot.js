@@ -14,6 +14,7 @@ function respond() {
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/coolguy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /.*[Ee]nd[Gg]ame.*$/, botRegex7=/.*[Gg][Rr][Ee][Ee][Tt][Ii][Nn][Gg].*$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
     var botRegex8 = /.*[Ss]onic.*/;
+    var botRegex9 = /^\/showme [^\W]*/
 
 
     var reg1 = botRegex1.test(request.text);
@@ -24,6 +25,7 @@ function respond() {
     var reg6 = botRegex6.test(request.text);
     var reg7 = botRegex7.test(request.text);
     var reg8 = botRegex8.test(request.text);
+    var reg9 = botRegex9.test(request.text);
     //console.log(JSON.parse(this.req.chunks[1]));
     //console.log(JSON.parse(this.req.chunks[2]));
 
@@ -144,6 +146,16 @@ function respond() {
 
             }
             this.res.end();
+        }
+        else if (request.text && reg9) {
+            this.res.writeHead(200);
+            console.log("here we go");
+            var stringArr = request.text.split(" ", 2);
+            var search = stringArr[1];
+            console.log("about to search for "+search);
+            var post = booru.search('safebooru', [search], { limit: 1, random: true });
+            postMessage(post.fileUrl);
+            this.res.end;
         }
         else {
             console.log("don't care");

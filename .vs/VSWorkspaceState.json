@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\node_modules",
     "\\public"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }
