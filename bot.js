@@ -1,6 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var booru = require('booru');
+const Booru = require('booru');
 
 var botID = process.env.BOT_ID;
 var img1 = "https://i.groupme.com/750x750.jpeg.fccb596a974447afa82be1da05ed4d88";
@@ -14,7 +14,8 @@ function respond() {
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/coolguy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /.*[Ee]nd[Gg]ame.*$/, botRegex7=/.*[Gg][Rr][Ee][Ee][Tt][Ii][Nn][Gg].*$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
     var botRegex8 = /.*[Ss]onic.*/;
-    var botRegex9 = /^\/showme [^\W]*/
+    //var botRegex9 = /^\/showme [^\W]*/
+    var botRegex9 = /^\/debug [^\W]*/;
 
 
     var reg1 = botRegex1.test(request.text);
@@ -152,9 +153,12 @@ function respond() {
             console.log("here we go");
             var stringArr = request.text.split(" ", 2);
             var search = stringArr[1];
-            console.log("about to search for "+search);
-            var post = booru.search('safebooru', [search], { limit: 1, random: true });
-            postMessage(post.file_url);
+            console.log("about to search for " + search);
+            Booru.search('safebooru', [search], { limit: 1, random: true })
+                .then(posts => {
+                    for (let post of posts)
+                        console.log(post.fileUrl, post.postView)
+                })
             this.res.end;
         }
         else {
