@@ -14,8 +14,8 @@ function respond() {
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/coolguy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /.*[Ee]nd[Gg]ame.*$/, botRegex7=/.*[Gg][Rr][Ee][Ee][Tt][Ii][Nn][Gg].*$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
     var botRegex8 = /.*[Ss]onic.*/;
-    //var botRegex9 = /^\/showme [^\W]*/
-    var botRegex9 = /^\/debug [^\W]*/;
+    var botRegex9 = /^\/showme [^\W]*/
+
 
 
     var reg1 = botRegex1.test(request.text);
@@ -157,7 +157,7 @@ function respond() {
             Booru.search('safebooru', [search], { limit: 1, random: true })
                 .then(posts => {
                     for (let post of posts)
-                        postImage(post.fileUrl);
+                        postMessage(post.fileUrl);
                 })
             this.res.end;
         }
