@@ -154,7 +154,7 @@ function respond() {
             var search = stringArr[1];
             console.log("about to search for "+search);
             var post = booru.search('safebooru', [search], { limit: 1, random: true });
-            postMessage(post.fileUrl);
+            postMessage(post.file_url);
             this.res.end;
         }
         else {
